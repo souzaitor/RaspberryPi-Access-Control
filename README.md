@@ -23,3 +23,5 @@ https://learn.adafruit.com/adafruit-optical-fingerprint-sensor/circuitpython
 https://www.codespeedy.com/fingerprint-detection-in-python/
 
 https://github.com/kjanko/python-fingerprint-recognition/blob/master/app.py
+
+https://github.com/moka1309/Biometric-Attendance-System-using-Python-and-Raspberry-pi-3-/blob/master/attendance/enroll.py
