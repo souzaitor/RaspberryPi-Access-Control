@@ -12,6 +12,8 @@
 - [ ] Exibir data e hora em um display e mensagem "Acesso Liberado" ou "Acesso Negado"
 - [ ] Emitir um sinal sonoro ao liberar acesso (BEEP)
 
+
+## Referências
 https://www.instructables.com/Fingerprint-and-RFID-Based-Attendance-System-Using/
 
 https://tutorials-raspberrypi.com/how-to-use-raspberry-pi-fingerprint-sensor-authentication/
