@@ -113,7 +113,7 @@ def enroll_finger():
 
 ## Inicializa o sensor
 try:
-    f = PyFingerprint('/dev/ttyS1', 57600, 0xFFFFFFFF, 0x00000000)
+    f = PyFingerprint('/dev/ttyUSB0', 57600, 0xFFFFFFFF, 0x00000000)
 
     if ( f.verifyPassword() == False ):
         raise ValueError('The given fingerprint sensor password is wrong!')
@@ -126,7 +126,7 @@ except Exception as e:
 while True:
     print("----------------")
     print("e) enroll print")
-    print("s) find print")
+    print("s) search print")
     print("d) delete print")
     print("----------------")
     c = input("> ")
