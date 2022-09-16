@@ -31,3 +31,5 @@ https://github.com/moka1309/Biometric-Attendance-System-using-Python-and-Raspber
 [Python library for ZFM fingerprint sensors](https://github.com/bastianraschke/pyfingerprint)
 
 https://github.com/bastianraschke/pyfingerprint/issues/40
+
+[**Raspberry Pi GPIO pinout guide**](https://pinout.xyz/#)
