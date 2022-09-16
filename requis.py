@@ -189,7 +189,7 @@ def enroll_finger():
     f.convertImage(0x02)
 
     if ( f.compareCharacteristics()  ==  0 ):
-        print "Fingers do not match"
+        print ("Fingers do not match")
         lcdcmd(1)
         LCD_print("Finger Did not")
         lcdcmd(192)
