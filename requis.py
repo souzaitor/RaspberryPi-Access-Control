@@ -9,30 +9,28 @@ D4 = 24
 D5 = 25
 D6 = 8
 D7 = 7
-enrol_button = 5
-delete_button = 6
-increase_button = 13
-decrease_button = 19
-led = 26
-
-# 
-HIGH = 1
-LOW = 0
+enrol_button = 2
+delete_button = 3
+increase_button = 4
+decrease_button = 17
+#relay = 27
+#buzzer = 22
+#led = 26
 
 #
 gpio.setwarnings(False)
-gpio.setmode(gpio.BCM)
-gpio.setup(RS, gpio.OUT)
+gpio.setmode(gpio.BCM) 
+gpio.setup(RS, gpio.OUT) 
 gpio.setup(EN, gpio.OUT)
 gpio.setup(D4, gpio.OUT)
 gpio.setup(D5, gpio.OUT)
 gpio.setup(D6, gpio.OUT)
 gpio.setup(D7, gpio.OUT)
-gpio.setup(enrol_button, gpio.IN, pull_up_down=gpio.PUD_UP)
-gpio.setup(delete_button, gpio.IN, pull_up_down=gpio.PUD_UP)
+gpio.setup(enrol_button,    gpio.IN, pull_up_down=gpio.PUD_UP)
+gpio.setup(delete_button,   gpio.IN, pull_up_down=gpio.PUD_UP)
 gpio.setup(increase_button, gpio.IN, pull_up_down=gpio.PUD_UP)
 gpio.setup(decrease_button, gpio.IN, pull_up_down=gpio.PUD_UP)
-gpio.setup(led, gpio.OUT)
+#gpio.setup(led, gpio.OUT)
 
 try:
     f = PyFingerprint('/dev/ttyUSB0', 57600, 0xFFFFFFFF, 0x00000000)
@@ -286,15 +284,16 @@ LCD_print("Welcomes You  ")
 time.sleep(3)
 flag=0
 LCD_clear()
-while 1:
-    gpio.output(led, HIGH)
+
+while True:
+    #gpio.output(led, HIGH)
     lcdcmd(1)
     LCD_print("Place Finger")
     if gpio.input(enrol_button)  ==  0:
-        gpio.output(led, LOW)
+        #gpio.output(led, LOW)
         enroll_finger()
     elif gpio.input(delete_button)  ==  0:
-        gpio.output(led, LOW)
+        #gpio.output(led, LOW)
         while gpio.input(delete_button)  ==  0:
             time.sleep(0.1)
         deleteFinger()
