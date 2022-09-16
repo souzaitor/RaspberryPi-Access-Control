@@ -134,6 +134,6 @@ while True:
     if c == "e":
         enroll_finger()
     if c == "s":
-        search_finger
+        search_finger()
     if c == "d":
         delete_finger()
