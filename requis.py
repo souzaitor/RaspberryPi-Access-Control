@@ -125,7 +125,7 @@ def search_finger():
 
 ## Tries to initialize the sensor
 try:
-    f = PyFingerprint('/dev/ttyUSB0', 57600, 0xFFFFFFFF, 0x00000000)
+    f = PyFingerprint('/dev/ttyS1', 57600, 0xFFFFFFFF, 0x00000000)
 
     if ( f.verifyPassword() == False ):
         raise ValueError('The given fingerprint sensor password is wrong!')
@@ -136,13 +136,9 @@ except Exception as e:
     exit(1)
 
 ## Gets some sensor information
-print('Currently used templates: ' + str(f.getTemplateCount()) +'/'+ str(f.getStorageCapacity()))
 
 while True:
     print("----------------")
-    if finger.read_templates() != adafruit_fingerprint.OK:
-        raise RuntimeError("Failed to read templates")
-    print("Fingerprint templates:", finger.templates)
     print("e) enroll print")
     print("s) find print")
     print("d) delete print")
