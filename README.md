@@ -19,3 +19,5 @@
 https://github.com/moka1309/Biometric-Attendance-System-using-Python-and-Raspberry-pi-3-/blob/master/attendance/enroll.py
 
 [Python library for ZFM fingerprint sensors](https://github.com/bastianraschke/pyfingerprint)
+
+https://github.com/bastianraschke/pyfingerprint/issues/40
