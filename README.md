@@ -1,4 +1,4 @@
-# RaspberryPi-Access-Control
+# RaspberryPi-Fingerprint-Access-Control
 
 ## Components
 
