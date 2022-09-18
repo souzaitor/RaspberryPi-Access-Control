@@ -51,9 +51,8 @@ With fingerprint access control, you use a fingerprint scanner to create a templ
 <!-- LICENSE -->
 ## 🔵 License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License. See [LICENSE.txt](https://github.com/souzaitor/RaspberryPi-Access-Control/blob/main/LICENSE) for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔵 Acknowledgments
 * [**Adafruit Optical Fingerprint Sensor**](https://learn.adafruit.com/adafruit-optical-fingerprint-sensor/circuitpython)
