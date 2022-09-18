@@ -58,3 +58,4 @@ Distributed under the MIT License. See [LICENSE.txt](https://github.com/souzaito
 * [**Adafruit Optical Fingerprint Sensor**](https://learn.adafruit.com/adafruit-optical-fingerprint-sensor/circuitpython)
 * [**Python library for ZFM fingerprint sensors**](https://github.com/bastianraschke/pyfingerprint)
 * [**Raspberry Pi GPIO pinout guide**](https://pinout.xyz/#)
+* [**RPLCD Documentation**](https://rplcd.readthedocs.io/en/stable/)
