@@ -1,25 +1,54 @@
 import time
 from pyfingerprint.pyfingerprint import PyFingerprint
+import hashlib
+from RPLCD import CharLCD
+import RPi.GPIO as GPIO
+
+# Initialize pins
+pin_rs = 12
+pin_en = 16
+pin_D4 = 18
+pin_D5 = 22
+pin_D6 = 24
+pin_D7 = 26
+pin_buzzer = 2
+pin_relay = 1
+
+# Initialize LCD
+lcd = CharLCD(cols=16, rows=2, pin_rs=pin_rs, pin_e=pin_en, pins_data=[18, 22, 24, 26])
+
+# Initialize GPIO
+GPIO.setwarnings(False)
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(pin_buzzer, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(pin_relay,  GPIO.OUT, initial=GPIO.LOW)
+
 
 def delete_finger():
     """
-    Tries to delete the template of the finger
+    Delete the template of the finger
     """
     try:
         positionNumber = input('Please enter the template position you want to delete: ')
+        lcd.write_string(u'Enter template to delete:')
         positionNumber = int(positionNumber)
 
         if ( f.deleteTemplate(positionNumber) == True ):
             print('Template deleted!')
+            lcd.write_string(u'Template deleted!')
 
     except Exception as e:
         print('Operation failed!')
         print('Exception message: ' + str(e))
+        lcd.write_string(u'Operation failed!')
         exit(1)
 
 def search_finger():
-    ## Tries to search the finger and calculate hash
+    """
+    Search the finger and calculate hash
+    """
     try:
+        lcd.write_string(u'Waiting for finger...')
         print('Waiting for finger...')
 
         ## Wait that finger is read
@@ -37,26 +66,26 @@ def search_finger():
 
         if ( positionNumber == -1 ):
             print('No match found!')
+            lcd.write_string(u'Access Denied!')
             exit(0)
+
         else:
             print('Found template at position #' + str(positionNumber))
             print('The accuracy score is: ' + str(accuracyScore))
 
-        ## OPTIONAL stuff
-        ##
+            lcd.write_string(u'Access Allowed')
 
-        ## Loads the found template to charbuffer 1
-        f.loadTemplate(positionNumber, 0x01)
-
-        ## Downloads the characteristics of template loaded in charbuffer 1
-        characterics = str(f.downloadCharacteristics(0x01)).encode('utf-8')
-
-        ## Hashes characteristics of template
-        print('SHA-2 hash of template: ' + hashlib.sha256(characterics).hexdigest())
+            # Buzzer beep and Aativate relay 
+            GPIO.output(pin_buzzer, GPIO.HIGH)
+            GPIO.output(pin_relay, GPIO.HIGH)
+            time.sleep(2)
+            GPIO.output(pin_buzzer, GPIO.LOW)
+            GPIO.output(pin_relay, GPIO.LOW)
 
     except Exception as e:
         print('Operation failed!')
         print('Exception message: ' + str(e))
+        lcd.write_string(u'Operation failed!')
         exit(1)
 
 def enroll_finger():
@@ -66,6 +95,7 @@ def enroll_finger():
     ## Tries to enroll new finger
     try:
         print('Waiting for finger...')
+        lcd.write_string(u'Waiting for finger...')
 
         ## Wait that finger is read
         while ( f.readImage() == False ):
@@ -80,12 +110,15 @@ def enroll_finger():
 
         if ( positionNumber >= 0 ):
             print('Template already exists at position #' + str(positionNumber))
+            lcd.write_string(u'Template already exists at pos ' + str(positionNumber))
             exit(0)
 
         print('Remove finger...')
+        lcd.write_string(u'Remove finger...')
         time.sleep(2)
 
         print('Waiting for same finger again...')
+        lcd.write_string(u'Waiting for same finger again...')
 
         ## Wait that finger is read again
         while ( f.readImage() == False ):
@@ -105,35 +138,27 @@ def enroll_finger():
         positionNumber = f.storeTemplate()
         print('Finger enrolled successfully!')
         print('New template position #' + str(positionNumber))
+        lcd.write_string(u'Finger enrolled successfully! Pos# '+ str(positionNumber))
 
     except Exception as e:
         print('Operation failed!')
         print('Exception message: ' + str(e))
         exit(1)
 
-## Inicializa o sensor
-try:
-    f = PyFingerprint('/dev/ttyUSB0', 57600, 0xFFFFFFFF, 0x00000000)
 
-    if ( f.verifyPassword() == False ):
-        raise ValueError('The given fingerprint sensor password is wrong!')
+if __name__ == "__main__":
+    ## Initialize fingerprint sensor
+    try:
+        f = PyFingerprint('/dev/ttyUSB0', 57600, 0xFFFFFFFF, 0x00000000)
 
-except Exception as e:
-    print('The fingerprint sensor could not be initialized!')
-    print('Exception message: ' + str(e))
-    exit(1)
+        if ( f.verifyPassword() == False ):
+            raise ValueError('The given fingerprint sensor password is wrong!')
 
-while True:
-    print("----------------")
-    print("e) enroll print")
-    print("s) search print")
-    print("d) delete print")
-    print("----------------")
-    c = input("> ")
+    except Exception as e:
+        print('The fingerprint sensor could not be initialized!')
+        print('Exception message: ' + str(e))
+        lcd.write_string(u'fingerprint sensor error")
+        exit(1)
 
-    if c == "e":
-        enroll_finger()
-    if c == "s":
+    while True:
         search_finger()
-    if c == "d":
-        delete_finger()
