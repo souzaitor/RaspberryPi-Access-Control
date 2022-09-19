@@ -154,5 +154,5 @@ if __name__ == "__main__":
                 enroll_finger()
             if c == "d":
                 delete_finger()
-    except KeyboardInterrupt
+    except KeyboardInterrupt:
         print("Finished")

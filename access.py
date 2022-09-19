@@ -94,5 +94,5 @@ if __name__ == "__main__":
     try:
         while True:
             search_finger()
-    except KeyboardInterrupt
+    except KeyboardInterrupt:
         print("Finished")
