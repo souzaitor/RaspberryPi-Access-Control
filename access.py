@@ -11,8 +11,8 @@ pin_D4 = 18
 pin_D5 = 22
 pin_D6 = 24
 pin_D7 = 26
-pin_buzzer = 2
-pin_relay = 1
+#pin_buzzer = 2
+#pin_relay = 1
 
 # Initialize LCD
 lcd = CharLCD(cols=16, rows=2, pin_rs=pin_rs, pin_e=pin_en, pins_data=[18, 22, 24, 26], numbering_mode=GPIO.BOARD)
@@ -20,8 +20,8 @@ lcd = CharLCD(cols=16, rows=2, pin_rs=pin_rs, pin_e=pin_en, pins_data=[18, 22, 2
 # Initialize GPIO
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(pin_buzzer, GPIO.OUT, initial=GPIO.LOW)
-GPIO.setup(pin_relay,  GPIO.OUT, initial=GPIO.LOW)
+#GPIO.setup(pin_buzzer, GPIO.OUT)
+#GPIO.setup(pin_relay,  GPIO.OUT)
 
 
 def delete_finger():
