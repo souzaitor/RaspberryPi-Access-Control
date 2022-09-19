@@ -60,15 +60,9 @@ def search_finger():
         else:
             print('Found template at position #' + str(positionNumber))
             print('The accuracy score is: ' + str(accuracyScore))
-            client = ntplib.NTPClient()
-            response = client.request('pool.ntp.org')
-            t = datetime.fromtimestamp(response.tx_time)
-            time_ntp = t.strftime("%H:%M:%S %d/%m/%Y")
 
             lcd.clear()
             lcd.write_string('Access Allowed')
-            ldc.lf()
-            lcd.write_string(str(time_ntp))
             
             # Buzzer beep and Activate relay 
             GPIO.output(pin_buzzer, GPIO.HIGH)
