@@ -15,7 +15,7 @@ pin_buzzer = 2
 pin_relay = 1
 
 # Initialize LCD
-lcd = CharLCD(cols=16, rows=2, pin_rs=pin_rs, pin_e=pin_en, pins_data=[18, 22, 24, 26])
+lcd = CharLCD(cols=16, rows=2, pin_rs=pin_rs, pin_e=pin_en, pins_data=[18, 22, 24, 26], numbering_mode=GPIO.BOARD)
 
 # Initialize GPIO
 GPIO.setwarnings(False)
