@@ -53,6 +53,8 @@ def search_finger():
             print('No match found!')
             lcd.clear()
             lcd.write_string('Access Denied!')
+            time.sleep(2)
+            lcd.clear()
 
         else:
             print('Found template at position #' + str(positionNumber))
