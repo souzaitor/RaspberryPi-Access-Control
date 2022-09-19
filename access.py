@@ -35,12 +35,12 @@ def delete_finger():
 
         if ( f.deleteTemplate(positionNumber) == True ):
             print('Template deleted!')
-            lcd.write_string(u'Template deleted!')
+            lcd.write_string('Template deleted!')
 
     except Exception as e:
         print('Operation failed!')
         print('Exception message: ' + str(e))
-        lcd.write_string(u'Operation failed!')
+        lcd.write_string('Operation failed!')
         exit(1)
 
 def search_finger():
@@ -48,7 +48,7 @@ def search_finger():
     Search the finger and calculate hash
     """
     try:
-        lcd.write_string(u'Waiting for finger...')
+        lcd.write_string('Waiting for finger...')
         print('Waiting for finger...')
 
         ## Wait that finger is read
@@ -66,26 +66,26 @@ def search_finger():
 
         if ( positionNumber == -1 ):
             print('No match found!')
-            lcd.write_string(u'Access Denied!')
+            lcd.write_string('Access Denied!')
             exit(0)
 
         else:
             print('Found template at position #' + str(positionNumber))
             print('The accuracy score is: ' + str(accuracyScore))
 
-            lcd.write_string(u'Access Allowed')
+            lcd.write_string('Access Allowed')
 
             # Buzzer beep and Aativate relay 
-            GPIO.output(pin_buzzer, GPIO.HIGH)
-            GPIO.output(pin_relay, GPIO.HIGH)
-            time.sleep(2)
-            GPIO.output(pin_buzzer, GPIO.LOW)
-            GPIO.output(pin_relay, GPIO.LOW)
+            #GPIO.output(pin_buzzer, GPIO.HIGH)
+            #GPIO.output(pin_relay, GPIO.HIGH)
+            #time.sleep(2)
+            #GPIO.output(pin_buzzer, GPIO.LOW)
+            #GPIO.output(pin_relay, GPIO.LOW)
 
     except Exception as e:
         print('Operation failed!')
         print('Exception message: ' + str(e))
-        lcd.write_string(u'Operation failed!')
+        lcd.write_string('Operation failed!')
         exit(1)
 
 def enroll_finger():
@@ -95,7 +95,7 @@ def enroll_finger():
     ## Tries to enroll new finger
     try:
         print('Waiting for finger...')
-        lcd.write_string(u'Waiting for finger...')
+        lcd.write_string('Waiting for finger...')
 
         ## Wait that finger is read
         while ( f.readImage() == False ):
@@ -110,15 +110,15 @@ def enroll_finger():
 
         if ( positionNumber >= 0 ):
             print('Template already exists at position #' + str(positionNumber))
-            lcd.write_string(u'Template already exists at pos ' + str(positionNumber))
+            lcd.write_string('Template already exists at pos ' + str(positionNumber))
             exit(0)
 
         print('Remove finger...')
-        lcd.write_string(u'Remove finger...')
+        lcd.write_string('Remove finger...')
         time.sleep(2)
 
         print('Waiting for same finger again...')
-        lcd.write_string(u'Waiting for same finger again...')
+        lcd.write_string('Waiting for same finger again...')
 
         ## Wait that finger is read again
         while ( f.readImage() == False ):
@@ -157,8 +157,20 @@ if __name__ == "__main__":
     except Exception as e:
         print('The fingerprint sensor could not be initialized!')
         print('Exception message: ' + str(e))
-        lcd.write_string(u"fingerprint sensor error")
+        lcd.write_string("fingerprint sensor error")
         exit(1)
 
-    while True:
+while True:
+    print("----------------")
+    print("e) enroll print")
+    print("s) seatch print")
+    print("d) delete print")
+    print("----------------")
+    c = input("> ")
+
+    if c == "e":
+        enroll_finger()
+    if c == "s":
         search_finger()
+    if c == "d":
+        delete_finger()
