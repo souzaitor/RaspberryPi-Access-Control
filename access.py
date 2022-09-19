@@ -157,7 +157,7 @@ if __name__ == "__main__":
     except Exception as e:
         print('The fingerprint sensor could not be initialized!')
         print('Exception message: ' + str(e))
-        lcd.write_string(u'fingerprint sensor error")
+        lcd.write_string(u"fingerprint sensor error")
         exit(1)
 
     while True:
