@@ -16,6 +16,7 @@ pin_relay = 3
 
 # Initialize LCD
 lcd = CharLCD(cols=16, rows=2, pin_rs=pin_rs, pin_e=pin_en, pins_data=[18, 22, 24, 26], numbering_mode=GPIO.BOARD)
+lcd.clear()
 
 # Initialize GPIO
 GPIO.setwarnings(False)
@@ -52,7 +53,6 @@ def search_finger():
             print('No match found!')
             lcd.clear()
             lcd.write_string('Access Denied!')
-            exit(0)
 
         else:
             print('Found template at position #' + str(positionNumber))
@@ -89,6 +89,5 @@ if __name__ == "__main__":
         lcd.write_string("fingerprint sensor error")
         exit(1)
 
-    lcd.clear()
     while True:
         search_finger()
