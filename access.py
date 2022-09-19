@@ -3,6 +3,7 @@ from pyfingerprint.pyfingerprint import PyFingerprint
 import hashlib
 from RPLCD import CharLCD
 import RPi.GPIO as GPIO
+import ntplib
 
 # Initialize pins
 pin_rs = 12
@@ -59,9 +60,16 @@ def search_finger():
         else:
             print('Found template at position #' + str(positionNumber))
             print('The accuracy score is: ' + str(accuracyScore))
+            client = ntplib.NTPClient()
+            response = client.request('pool.ntp.org')
+            t = datetime.fromtimestamp(response.tx_time)
+            time_ntp = t.strftime("%H:%M:%S %d/%m/%Y")
+
             lcd.clear()
             lcd.write_string('Access Allowed')
-
+            ldc.lf()
+            lcd.write_string(str(time_ntp))
+            
             # Buzzer beep and Activate relay 
             GPIO.output(pin_buzzer, GPIO.HIGH)
             GPIO.output(pin_relay, GPIO.HIGH)
@@ -96,3 +104,4 @@ if __name__ == "__main__":
             search_finger()
     except KeyboardInterrupt:
         print("Finished")
+        lcd.clear()
