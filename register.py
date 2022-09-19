@@ -143,16 +143,13 @@ if __name__ == "__main__":
     
     lcd.clear()
     while True:
-        search_finger()
-    
-        while True:
-            print("----------------")
-            print("e) enroll print")
-            print("d) delete print")
-            print("----------------")
-            c = input("> ")
+        print("----------------")
+        print("e) enroll print")
+        print("d) delete print")
+        print("----------------")
+        c = input("> ")
 
-            if c == "e":
-                enroll_finger()
-            if c == "d":
-                delete_finger()
+        if c == "e":
+            enroll_finger()
+        if c == "d":
+            delete_finger()
