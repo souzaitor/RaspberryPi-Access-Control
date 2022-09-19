@@ -20,7 +20,7 @@ lcd = CharLCD(cols=16, rows=2, pin_rs=pin_rs, pin_e=pin_en, pins_data=[18, 22, 2
 # Initialize GPIO
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
-#GPIO.setup(pin_buzzer, GPIO.OUT)
+GPIO.setup(pin_buzzer, GPIO.OUT)
 GPIO.setup(pin_relay,  GPIO.OUT)
 GPIO.output(pin_relay, GPIO.LOW)
 GPIO.output(pin_buzzer, GPIO.LOW)
