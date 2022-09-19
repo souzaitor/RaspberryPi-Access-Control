@@ -174,17 +174,18 @@ if __name__ == "__main__":
         lcd.write_string("fingerprint sensor error")
         exit(1)
 
-while True:
-    print("----------------")
-    print("e) enroll print")
-    print("s) search print")
-    print("d) delete print")
-    print("----------------")
-    c = input("> ")
+    lcd.clear()
+    while True:
+        print("----------------")
+        print("e) enroll print")
+        print("s) search print")
+        print("d) delete print")
+        print("----------------")
+        c = input("> ")
 
-    if c == "e":
-        enroll_finger()
-    if c == "s":
-        search_finger()
-    if c == "d":
-        delete_finger()
+        if c == "e":
+            enroll_finger()
+        if c == "s":
+            search_finger()
+        if c == "d":
+            delete_finger()
