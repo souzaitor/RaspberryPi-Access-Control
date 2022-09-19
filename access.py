@@ -91,5 +91,8 @@ if __name__ == "__main__":
         lcd.write_string("fingerprint sensor error")
         exit(1)
 
-    while True:
-        search_finger()
+    try:
+        while True:
+            search_finger()
+    except KeyboardInterrupt
+        print("Finished")

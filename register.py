@@ -142,14 +142,17 @@ if __name__ == "__main__":
         exit(1)
     
     lcd.clear()
-    while True:
-        print("----------------")
-        print("e) enroll print")
-        print("d) delete print")
-        print("----------------")
-        c = input("> ")
+    try:
+        while True:
+            print("----------------")
+            print("e) enroll print")
+            print("d) delete print")
+            print("----------------")
+            c = input("> ")
 
-        if c == "e":
-            enroll_finger()
-        if c == "d":
-            delete_finger()
+            if c == "e":
+                enroll_finger()
+            if c == "d":
+                delete_finger()
+    except KeyboardInterrupt
+        print("Finished")
