@@ -11,7 +11,7 @@ pin_D4 = 18
 pin_D5 = 22
 pin_D6 = 24
 pin_D7 = 26
-#pin_buzzer = 2
+pin_buzzer = 37
 pin_relay = 3
 
 # Initialize LCD
@@ -22,7 +22,8 @@ GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
 #GPIO.setup(pin_buzzer, GPIO.OUT)
 GPIO.setup(pin_relay,  GPIO.OUT)
-GPIO.output(pin_relay, GPIO.HIGH)
+GPIO.output(pin_relay, GPIO.LOW)
+GPIO.output(pin_buzzer, GPIO.LOW)
 
 
 def delete_finger():
@@ -81,12 +82,12 @@ def search_finger():
             lcd.clear()
             lcd.write_string('Access Allowed')
 
-            # Buzzer beep and Aativate relay 
-            #GPIO.output(pin_buzzer, GPIO.LOW)
-            GPIO.output(pin_relay, GPIO.LOW)
-            time.sleep(2)
-            #GPIO.output(pin_buzzer, GPIO.LOW)
+            # Buzzer beep and Activate relay 
+            GPIO.output(pin_buzzer, GPIO.HIGH)
             GPIO.output(pin_relay, GPIO.HIGH)
+            time.sleep(2)
+            GPIO.output(pin_buzzer, GPIO.LOW)
+            GPIO.output(pin_relay, GPIO.LOW)
 
     except Exception as e:
         print('Operation failed!')
