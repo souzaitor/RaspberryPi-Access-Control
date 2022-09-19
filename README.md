@@ -16,14 +16,14 @@ With fingerprint access control, you use a fingerprint scanner to create a templ
 ![Capturar](https://user-images.githubusercontent.com/39158108/190927242-fd24282c-425d-45e4-a3ac-49613fc4d011.JPG)
 
 ## 🔵 Roadmap
-- [ ] Identify the user by biometrics 
+- [x] Identify the user by biometrics 
 - [ ] Query an HTTP server, via GET method, checking if that user is authorized to access the site
 - [ ] If there is a connection failure when consulting the server, check in a local memory (SD Card) if that user is authorized
-- [ ] Trigger a relay, which will be responsible for opening the door
+- [x] Trigger a relay, which will be responsible for opening the door
 - [ ] Log access log to a file on memory card
 - [ ] Synchronize date and time with the Internet
 - [ ] Display date and time on a display and message "Access Allowed" or "Access Denied"
-- [ ] Beep when releasing access (BEEP)
+- [x] Beep when releasing access (BEEP)
 
 ## 🔵 Authors
 
