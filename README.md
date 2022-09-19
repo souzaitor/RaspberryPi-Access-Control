@@ -2,6 +2,10 @@
 
 With fingerprint access control, you use a fingerprint scanner to create a template for each person you want to authorise for access. Then when they present their finger at a fingerprint reader, for example by a door, it’s compared with the stored template in your database. If it’s a match, they’re given access
 
+![WhatsApp-Video-2022-09-19-at-10 25 05](https://user-images.githubusercontent.com/39158108/191032555-744235cd-15d2-42db-b0dd-2c2b959f6726.gif) 
+
+![WhatsApp-Video-2022-09-19-at-10 25 20](https://user-images.githubusercontent.com/39158108/191032673-4c773d0f-ce95-4d4a-b516-c426bf8f665f.gif)
+
 ## 🔵 Components
 
 - 1 x [Raspberry Pi 3](https://components101.com/sites/default/files/component_datasheet/Raspberry%20Pi%203%20Datasheet.pdf)
