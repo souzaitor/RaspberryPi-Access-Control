@@ -8,7 +8,7 @@ With fingerprint access control, you use a fingerprint scanner to create a templ
 
 ## 🔵 Introduction
 
-A door access control system based on a Raspberry PI and a PiFace shield 🤖 Project proposed during the course of Embedded Computer Systems Project (1001538), offered by the Department of Computing at UFSCar in semester 2022/1
+Project proposed during the course of Embedded Computer Systems Project (1001538), offered by the Department of Computing at UFSCar in semester 2022/1
 
 ## 🔵 Components
 
