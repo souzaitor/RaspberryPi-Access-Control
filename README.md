@@ -1,14 +1,15 @@
 <h1 align="center"> RaspberryPi Fingerprint Access Control </h1>
 
-With fingerprint access control, you use a fingerprint scanner to create a template for each person you want to authorise for access. Then when they present their finger at a fingerprint reader, for example by a door, it’s compared with the stored template in your database. If it’s a match, they’re given access
-
 ![WhatsApp-Video-2022-09-19-at-10 25 05](https://user-images.githubusercontent.com/39158108/191032555-744235cd-15d2-42db-b0dd-2c2b959f6726.gif) 
 
 ![WhatsApp-Video-2022-09-19-at-10 25 20](https://user-images.githubusercontent.com/39158108/191032673-4c773d0f-ce95-4d4a-b516-c426bf8f665f.gif)
 
 ## 🔵 Introduction
 
-Project proposed during the course of Embedded Computer Systems Project (1001538), offered by the Department of Computing at UFSCar in semester 2022/1
+Project proposed during the course of Embedded Computer Systems Project (1001538), offered by the Department of Computing at UFSCar in semester 2022/1.
+
+
+With fingerprint access control, you use a fingerprint scanner to create a template for each person you want to authorise for access. Then when they present their finger at a fingerprint reader, for example by a door, it’s compared with the stored template in your database. If it’s a match, they’re given access.
 
 ## 🔵 Components
 
