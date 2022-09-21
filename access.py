@@ -4,6 +4,7 @@ import hashlib
 from RPLCD import CharLCD
 import RPi.GPIO as GPIO
 import ntplib
+ import requests
 
 # Initialize pins
 pin_rs = 12
@@ -52,6 +53,11 @@ def search_finger():
 
         if ( positionNumber == -1 ):
             print('No match found!')
+
+            # Makes requisition to access server
+            r = requests.get('https://bipes.net.br/acesso_dc/acesso.php?card='+str(positionNumber)+'&finger=1')
+            print('Request access to server: ' + r.text)
+
             lcd.clear()
             lcd.write_string('Access Denied!')
             time.sleep(2)
@@ -60,6 +66,10 @@ def search_finger():
         else:
             print('Found template at position #' + str(positionNumber))
             print('The accuracy score is: ' + str(accuracyScore))
+
+            # Makes requisition to access server
+            r = requests.get('https://bipes.net.br/acesso_dc/acesso.php?card='+str(positionNumber)+'&finger=1')
+            print('Request access to server: ' + r.text)
 
             lcd.clear()
             lcd.write_string('Access Allowed')
