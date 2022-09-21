@@ -1,6 +1,15 @@
 <h1 align="center"> RaspberryPi Fingerprint Access Control </h1>
 
-With fingerprint access control, you use a fingerprint scanner to create a template for each person you want to authorise for access. Then when they present their finger at a fingerprint reader, for example by a door, it’s compared with the stored template in your database. If it’s a match, they’re given access
+![WhatsApp-Video-2022-09-19-at-10 25 05](https://user-images.githubusercontent.com/39158108/191032555-744235cd-15d2-42db-b0dd-2c2b959f6726.gif) 
+
+![WhatsApp-Video-2022-09-19-at-10 25 20](https://user-images.githubusercontent.com/39158108/191032673-4c773d0f-ce95-4d4a-b516-c426bf8f665f.gif)
+
+## 🔵 Introduction
+
+Project proposed during the course of Embedded Computer Systems Project (1001538), offered by the Department of Computing at UFSCar in semester 2022/1.
+
+
+With fingerprint access control, you use a fingerprint scanner to create a template for each person you want to authorise for access. Then when they present their finger at a fingerprint reader, for example by a door, it’s compared with the stored template in your database. If it’s a match, they’re given access.
 
 ## 🔵 Components
 
@@ -9,7 +18,7 @@ With fingerprint access control, you use a fingerprint scanner to create a templ
 - 1 x [Relay](https://s3-sa-east-1.amazonaws.com/robocore-lojavirtual/258/Relay_AX.pdf)
 - 1 x [Buzzer](https://datasheetspdf.com/datasheet/KY-006.html)
 - 1 x [USB / Serial - UART converter](https://www.mouser.com/datasheet/2/117/usb232r-ds-v10-14032.pdf)
-- 4 x [push button](https://www.hdk.co.jp/pdf/eng/e291702.pdf)
+- 1 X Potentiometers 10k
 - 1 x [LCD 16x2 5V - GDM1602K](https://www.sparkfun.com/datasheets/LCD/GDM1602K.pdf)
 
 ## 🔵 Schematic
