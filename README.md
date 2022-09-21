@@ -18,7 +18,7 @@ With fingerprint access control, you use a fingerprint scanner to create a templ
 - 1 x [Relay](https://s3-sa-east-1.amazonaws.com/robocore-lojavirtual/258/Relay_AX.pdf)
 - 1 x [Buzzer](https://datasheetspdf.com/datasheet/KY-006.html)
 - 1 x [USB / Serial - UART converter](https://www.mouser.com/datasheet/2/117/usb232r-ds-v10-14032.pdf)
-- 4 x [push button](https://www.hdk.co.jp/pdf/eng/e291702.pdf)
+- 1 X Potentiometers 10k
 - 1 x [LCD 16x2 5V - GDM1602K](https://www.sparkfun.com/datasheets/LCD/GDM1602K.pdf)
 
 ## 🔵 Schematic
