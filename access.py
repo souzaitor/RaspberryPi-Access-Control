@@ -3,8 +3,7 @@ from pyfingerprint.pyfingerprint import PyFingerprint
 import hashlib
 from RPLCD import CharLCD
 import RPi.GPIO as GPIO
-import ntplib
- import requests
+import requests
 
 # Initialize pins
 pin_rs = 12
@@ -50,12 +49,12 @@ def search_finger():
 
         positionNumber = result[0]
         accuracyScore = result[1]
-
+        
         if ( positionNumber == -1 ):
             print('No match found!')
 
             # Makes requisition to access server
-            r = requests.get('https://bipes.net.br/acesso_dc/acesso.php?card='+str(positionNumber)+'&finger=1')
+            r = requests.get('https://bipes.net.br/acesso_dc/finger.php?card='+str(positionNumber)+'&finger=1')
             print('Request access to server: ' + r.text)
 
             lcd.clear()
@@ -68,7 +67,7 @@ def search_finger():
             print('The accuracy score is: ' + str(accuracyScore))
 
             # Makes requisition to access server
-            r = requests.get('https://bipes.net.br/acesso_dc/acesso.php?card='+str(positionNumber)+'&finger=1')
+            r = requests.get('https://bipes.net.br/acesso_dc/finger.php?card='+str(positionNumber)+'&finger=1')
             print('Request access to server: ' + r.text)
 
             lcd.clear()
