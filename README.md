@@ -18,7 +18,7 @@ With fingerprint access control, you use a fingerprint scanner to create a templ
 - 1 x [Relay](https://s3-sa-east-1.amazonaws.com/robocore-lojavirtual/258/Relay_AX.pdf)
 - 1 x [Buzzer](https://datasheetspdf.com/datasheet/KY-006.html)
 - 1 x [USB / Serial - UART converter](https://www.mouser.com/datasheet/2/117/usb232r-ds-v10-14032.pdf)
-- 1 X Potentiometers 10k
+- 1 x [Potentiometers 10k](https://components101.com/resistors/potentiometer)
 - 1 x [LCD 16x2 5V - GDM1602K](https://www.sparkfun.com/datasheets/LCD/GDM1602K.pdf)
 
 ## 🔵 Schematic
@@ -26,13 +26,11 @@ With fingerprint access control, you use a fingerprint scanner to create a templ
 
 ## 🔵 Roadmap
 - [x] Identify the user by biometrics 
-- [ ] Query an HTTP server, via GET method, checking if that user is authorized to access the site
-- [ ] If there is a connection failure when consulting the server, check in a local memory (SD Card) if that user is authorized
+- [X] Query an HTTP server, via GET method, checking if that user is authorized to access the site
 - [x] Trigger a relay, which will be responsible for opening the door
-- [ ] Log access log to a file on memory card
-- [ ] Synchronize date and time with the Internet
-- [ ] Display date and time on a display and message "Access Allowed" or "Access Denied"
-- [x] Beep when releasing access (BEEP)
+- [x] Log access to a file in the server
+- [x] Display "Access Allowed" or "Access Denied"
+- [x] Beep when releasing access 
 
 ## 🔵 Authors
 
